@@ -1,41 +1,53 @@
-# Yomi Island: situs produk
+<p align="center">
+  <img src="assets/og.png" alt="Yomi Island: island neko untuk Windows" width="100%">
+</p>
 
-Situs statis satu halaman (HTML, CSS, JS biasa, tanpa build). Sumber isi dan desain: `design.md`.
+<h1 align="center">Yomi Island</h1>
 
-## Berkas
-- `index.html`, `privasi.html`, `style.css`, `app.js`
-- `assets/neko/` (GIF dan PNG maskot), `assets/favicon.png`, `assets/og.png`
-- `downloads/Yomi-Island-setup.exe` (WAJIB Anda taruh sendiri, lihat bagian Installer)
-- `.nojekyll` (agar GitHub Pages tidak memproses ulang berkas)
+<p align="center">
+  <img src="assets/neko/neko-idle.gif" alt="Neko siaga" width="110">
+</p>
 
-## Mencoba di komputer
-Jalankan server lokal dari folder ini, lalu buka http://localhost:8000
-    python -m http.server 8000
+<p align="center">
+  Island kecil bermaskot neko di tepi atas layar Windows.<br>
+  Menampilkan baterai dan jam, lalu mengingatkan task, timer baca, jadwal anime, dan musikmu.
+</p>
 
-## Installer (tombol Unduh)
-Semua tombol Unduh mengunduh langsung `downloads/Yomi-Island-setup.exe` dari situs ini, tanpa membuka halaman GitHub.
-1. Ambil `…-setup.exe` dari rilis Anda, ganti namanya menjadi `Yomi-Island-setup.exe`.
-2. Taruh di folder `downloads/`, lalu commit dan push bersama situs.
-3. Saat rilis baru: timpa berkas itu, lalu ubah "0.1.1" di `index.html` (hero dan bagian Unduh). Ukuran installer terbaca otomatis dari berkas.
-Tanpa berkas itu, tombol Unduh menghasilkan 404.
+<p align="center">
+  <a href="https://crfebrian.github.io/yomi-island-site/"><b>Buka situs</b></a> &nbsp;|&nbsp;
+  <a href="https://crfebrian.github.io/yomi-island-site/#unduh"><b>Unduh untuk Windows</b></a>
+</p>
 
-## Sebelum publish: sesuaikan 1 hal
-Di `index.html`, ubah `og:image` ke alamat situs yang sebenarnya:
-    https://<username>.github.io/<nama-repo>/assets/og.png
+---
 
-## Deploy ke GitHub Pages (gratis, repo harus publik)
-1. Buat repo publik baru di GitHub, lalu dari folder ini:
-       git init
-       git add .
-       git commit -m "Situs Yomi Island"
-       git branch -M main
-       git remote add origin https://github.com/<username>/<nama-repo>.git
-       git push -u origin main
-2. Di GitHub: Settings > Pages > Source: "Deploy from a branch" > Branch `main`, folder `/ (root)` > Save.
-3. Tunggu 1-2 menit. Situs hidup di https://<username>.github.io/<nama-repo>/
+## Apa itu?
 
-Semua path aset memakai path relatif, jadi aman di alamat bersubfolder.
+**Yomi Island** (yomi = membaca) adalah yomi kecil di tengah atas layar. Neko di dalamnya berubah ekspresi sesuai kegiatanmu: semangat saat ada yang perlu dikerjakan, kaget kalau sudah terlambat, tidur ketika semuanya beres. Klik pill untuk membuka panel.
 
-## Catatan
-- Font Zen Maru Gothic dimuat dari Google Fonts. Untuk nol permintaan pihak ketiga, unduh woff2-nya, taruh di `assets/fonts/`, dan ganti `<link>` dengan `@font-face` (lalu hapus fonts.googleapis.com dan fonts.gstatic.com dari meta CSP).
-- Kode situs hanya meminta ke situs sendiri (membaca ukuran installer). Tidak ada panggilan ke GitHub API.
+Gratis untuk pemakaian pribadi, tanpa akun dan tanpa telemetri. Untuk Windows 10 dan 11.
+
+## Yang ada di situsnya
+
+- **Coba langsung** di browser: tekan skenario, lihat island bereaksi.
+- **Cerita satu hari** bersama Yomi Island: task, baca, anime dan manga, musik, santai, dan mode otomatis.
+- **Cara memasang** dan jawaban pertanyaan yang sering muncul.
+- **[Kebijakan privasi](https://crfebrian.github.io/yomi-island-site/privasi.html)**.
+
+---
+
+<details>
+<summary>Untuk pengelola situs</summary>
+
+<br>
+
+Situs statis (HTML, CSS, JS biasa, tanpa build), dipublikasikan lewat GitHub Pages dari branch `main`.
+
+- Tombol Unduh mengarah ke `downloads/Yomi-Island-setup.exe`.
+- Saat ada versi baru: timpa berkas itu dengan installer baru (namanya tetap sama), lalu ubah angka versi di `index.html` (hero dan bagian Unduh).
+- Coba di komputer: `python -m http.server 8000`, lalu buka http://localhost:8000
+
+</details>
+
+<p align="center">
+  <sub>© 2026 CrFebrian</sub>
+</p>
