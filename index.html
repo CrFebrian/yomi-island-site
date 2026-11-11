@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yomi Island: island neko untuk Windows</title>
+  <meta name="description" content="Island kecil bermaskot neko di tepi atas layar Windows 10 dan 11, untuk pengingat task, timer baca, jadwal anime, dan musik.">
+  <meta name="theme-color" content="#040407">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Yomi Island: island neko untuk Windows">
+  <meta property="og:description" content="Tepi atas layarmu, sekarang ada yang menjaga. Island gratis bermaskot neko untuk Windows 10 dan 11.">
+  <meta property="og:image" content="https://crfebrian.github.io/yomi-island-site/assets/og.png">
+  <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#isi">Lewati ke isi</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="wrap header-in">
+      <a class="brand" href="#top" aria-label="Yomi Island, ke atas halaman">
+        <img src="assets/favicon.png" alt="" width="32" height="32">
+        <span>Yomi Island</span>
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="Navigasi utama">
+        <a href="#cerita">Cerita</a>
+        <a href="#coba">Coba</a>
+        <a href="#unduh">Unduh</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-support" href="https://saweria.co/BrianCoding" target="_blank" rel="noopener noreferrer">Dukung</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-ghost btn-sm hide-sm" href="https://saweria.co/BrianCoding" target="_blank" rel="noopener noreferrer">Dukung</a>
+        <a class="btn btn-primary btn-sm" href="downloads/Yomi-Island-setup.exe" download="Yomi-Island-setup.exe">Unduh</a>
+        <button class="btn btn-ghost btn-sm menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="siteNav">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="isi">
+    <!-- Island hidup: tetap menempel di atas halaman. Tanpa JS tampil statis. -->
+    <div class="dock" id="dock">
+      <div class="island pulse" id="heroIsland" data-state="hero">
+        <button class="island-bar" type="button" aria-expanded="false" aria-controls="heroIsland-panel"
+                aria-label="Island Yomi Island. Klik untuk membuka panel contoh">
+          <span class="bar-in">
+            <span class="i-left"><span class="batt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 6 13.5h5L10 21l7-10.5h-5z"/></svg><span class="tnum" data-batt>98%</span></span></span>
+            <span class="i-neko"><img src="assets/neko/neko-idle.gif" alt="" width="30" height="23"></span>
+            <span class="i-label"></span>
+            <span class="i-right"><span class="tnum" data-clock>09:41</span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <section class="hero" id="top" data-island="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>Tepi atas layarmu, sekarang ada yang menjaga.</h1>
+          <p class="lead">Yomi Island menampilkan baterai, jam, dan seekor neko yang berubah ekspresi sesuai kegiatanmu. Klik untuk membuka task, timer baca, jadwal anime, dan kontrol musik.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="downloads/Yomi-Island-setup.exe" download="Yomi-Island-setup.exe">Unduh untuk Windows</a>
+            <a class="btn btn-ghost" href="#coba">Coba di browser</a>
+          </div>
+          <p class="fine" id="heroMeta">Versi 0.1.1 untuk Windows 10 dan 11.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true" id="heroArt">
+          <div class="stage3d">
+            <div class="tilt" id="heroTilt">
+              <span class="orbit"><span class="orbit-ring"><i class="dot d1"></i><i class="dot d2"></i></span></span>
+              <span class="ground"></span>
+              <div class="float">
+                <img class="h-neko is-on" src="assets/neko/neko-idle.png" alt="" width="512" height="393">
+                <img class="h-neko" src="assets/neko/neko-excited.png" alt="" width="512" height="393">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip" aria-hidden="true"><div class="strip-track"><img src="assets/neko/neko-idle.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-excited.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-reading.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-music.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-sad.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-shock.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-sleep.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-idle.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-excited.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-reading.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-music.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-sad.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-shock.png" alt="" width="512" height="393" loading="lazy"><img src="assets/neko/neko-sleep.png" alt="" width="512" height="393" loading="lazy"></div></div>
+
+    <!-- 5.2 Cerita -->
+    <section class="section" id="cerita" aria-labelledby="h-cerita">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-cerita">Satu hari bersama Yomi Island</h2>
+          <p>Dari pagi sampai malam, island di atas halaman ini ikut berubah. Gulir pelan-pelan dan lihat neko menyesuaikan diri.</p>
+        </div>
+
+        <article class="story-item" id="s1" data-island="today">
+          <div class="story-text">
+            <span class="num tnum">01</span>
+            <h3>Hari ini</h3>
+            <p>Catat task lengkap dengan jamnya. Yomi mengingatkan sebelum waktunya habis, dan neko berganti ekspresi : semangat saat kurang dari 15 menit, kaget saat terlambat, sedih kalau sudah lama terlewat.</p>
+            <p>Notifikasi bisa disertai bunyi, dan bunyinya bisa dimatikan.</p>
+          </div>
+          <div class="story-ui">
+            <div class="ui ui-today">
+              <div class="ui-head"><span data-today-date>Hari ini</span><span class="chip">3 task</span></div>
+              <ul class="tasks">
+                <li><span class="t-time tnum">14:30</span><span class="t-name">Kirim laporan mingguan</span><span class="chip chip-live">12 mnt lagi</span></li>
+                <li><span class="t-time tnum">16:00</span><span class="t-name">Balas email dosen</span><span class="t-note">nanti</span></li>
+                <li class="late"><span class="t-time tnum">09:00</span><span class="t-name">Beli tinta printer</span><span class="chip chip-danger">terlambat</span></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-item flip" id="s2" data-island="read">
+          <div class="story-text">
+            <span class="num tnum">02</span>
+            <h3>Baca</h3>
+            <p>Timer Baca 25 menit, Fokus 50 menit, dan Rehat 5 menit. Sisa waktunya tampil di yomi, jadi kamu tidak perlu membuka apa pun.</p>
+            <p>Atur target halaman harian, catat progres tiap buku, dan jaga hitungan hari beruntun membacamu.</p>
+          </div>
+          <div class="story-ui">
+            <div class="ui ui-read">
+              <div class="seg" role="presentation"><span class="on">Baca 25</span><span>Fokus 50</span><span>Rehat 5</span></div>
+              <div class="read-main">
+                <svg class="ring" viewBox="0 0 100 100" aria-hidden="true">
+                  <circle cx="50" cy="50" r="42" class="ring-bg"/>
+                  <circle cx="50" cy="50" r="42" class="ring-fg" id="ringFg" pathLength="100" stroke-dasharray="100" stroke-dashoffset="3"/>
+                </svg>
+                <span class="ring-time tnum" id="ringTime">24:12</span>
+              </div>
+              <dl class="stats">
+                <div><dt>Target hari ini</dt><dd class="tnum">12 dari 20 halaman</dd><div class="bar"><i class="p60"></i></div></div>
+                <div><dt>Beruntun</dt><dd class="tnum">7 hari</dd></div>
+              </dl>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-item" id="s3" data-island="anime">
+          <div class="story-text">
+            <span class="num tnum">03</span>
+            <h3>Anime dan manga</h3>
+            <p>Hitung mundur episode berikutnya diambil dari AniList. Bab terbaru manga diambil dari MangaDex, dan bahasa babnya bisa kamu ubah di Pengaturan.</p>
+            <p>Dicek tiap 30 menit, lalu dikabarkan lewat yomi.</p>
+          </div>
+          <div class="story-ui">
+            <div class="ui ui-anime">
+              <div class="feed-row">
+                <img class="bob" src="assets/neko/neko-excited.png" alt="" width="64" height="49" loading="lazy">
+                <div><strong>Bintang Senja</strong><span class="tnum">Episode 8 tayang 2 jam 14 menit lagi</span></div>
+                <span class="chip">AniList</span>
+              </div>
+              <div class="feed-row">
+                <span class="cover" aria-hidden="true"></span>
+                <div><strong>Kota Hujan</strong><span class="tnum">Bab 112 baru saja rilis</span></div>
+                <span class="chip">MangaDex</span>
+              </div>
+              <p class="ui-foot">Judul di atas hanya contoh.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-item flip" id="s4" data-island="music">
+          <div class="story-text">
+            <span class="num tnum">04</span>
+            <h3>Musik</h3>
+            <p>Judul, artis, dan sampul album tampil dari pemutar apa pun: Spotify, pemutar musik, atau browser. Kalau pemutarnya tidak menyediakan sampul, neko membuatkan sampul pengganti. Ada tombol sebelumnya, putar/jeda, dan berikutnya.</p>
+          </div>
+          <div class="story-ui">
+            <div class="ui ui-music">
+              <div class="player-top">
+                <img class="beat" src="assets/neko/neko-music.png" alt="" width="96" height="74" loading="lazy">
+                <div class="player-meta"><strong>An Ode To</strong><span>Kenji Peach</span></div>
+                <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="bar bar-lg"><i class="p45"></i></div>
+              <div class="player-ctrl">
+                <button class="ic-btn" type="button" tabindex="-1" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M7 5v14M18 6v12l-9-6z"/></svg></button>
+                <button class="ic-btn ic-main" type="button" tabindex="-1" aria-hidden="true"><svg class="ico fill" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+                <button class="ic-btn" type="button" tabindex="-1" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M17 5v14M6 6v12l9-6z"/></svg></button>
+                <span class="vol"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.5h3.5L12 6v12l-4.5-3.5H4zM16 9a4 4 0 0 1 0 6"/></svg><span class="bar"><i class="p75"></i></span></span>
+              </div>
+              <p class="lyric" id="storyLyric">Baris lirik tampil di sini, mengikuti lagu.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-item" id="s5" data-island="chill">
+          <div class="story-text">
+            <span class="num tnum">05</span>
+            <h3>Santai</h3>
+            <p>Istirahat mata 20-20-20 : yomi menampilkan hitungan dan neko tidur sebentar. Ada kutipan harian dan penanda saat layarmu direkam.</p>
+            <p>Untuk pemain game, ada pengingat reset harian hingga 12 timer. Suara latar punya tiga pilihan lo-fi, yaitu malam, hujan, dan kafe, yang memutar lagu dari dalam aplikasi.</p>
+          </div>
+          <div class="story-ui">
+            <div class="ui ui-chill">
+              <div class="tile tile-eye">
+                <img class="snooze" src="assets/neko/neko-sleep.png" alt="" width="80" height="61" loading="lazy">
+                <strong class="tnum" id="eyeTime">18 dtk</strong>
+                <span>Istirahat mata</span>
+              </div>
+              <div class="tile tile-quote"><span>Kutipan hari ini</span><p>"Satu bab lagi, lalu minum air."</p></div>
+              <div class="tile tile-game"><span>Daily gacha</span><strong class="tnum">reset 4 j 10 mnt</strong></div>
+              <div class="tile tile-amb"><span>Suara latar</span><strong>Lo-fi</strong><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story-item flip" id="s6" data-island="auto">
+          <div class="story-text">
+            <span class="num tnum">06</span>
+            <h3>Mode otomatis</h3>
+            <p><strong>Mode rapat :</strong> saat mikrofon dipakai, pengingat dan bunyi ditahan, dan yomi menjadi indikator rapat dengan jumlah yang ditahan.</p>
+            <p><strong>Mode nonton :</strong> saat ada aplikasi layar penuh, seperti video atau game, island bersembunyi dan pengingat ikut ditahan.</p>
+          </div>
+          <div class="story-ui">
+            <div class="ui ui-auto">
+              <div class="mini-pill"><span class="mic-dot" aria-hidden="true"></span><img class="bob" src="assets/neko/neko-idle.png" alt="" width="30" height="23" loading="lazy"><span class="tnum">Rapat · 2 ditahan</span></div>
+              <div class="fs-box" aria-hidden="true">
+                <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="3"/><path d="M10 9.5v3.5l3-1.75z"/></svg>
+                <span>Layar penuh: island bersembunyi</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5.3 Coba langsung -->
+    <section class="section section-alt" id="coba" aria-labelledby="h-coba" data-island="hero">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-coba">Coba langsung di browser</h2>
+          <p>Pilih skenario di samping, lalu lihat island bereaksi seperti di Windows. Klik pill-nya untuk membuka panel. <strong>Ini contoh, isinya bukan data asli.</strong></p>
+        </div>
+        <div class="demo">
+          <div class="scenarios" role="group" aria-label="Skenario demo">
+            <button type="button" class="sc" data-scenario="urgent" aria-pressed="false">Task hampir jatuh tempo</button>
+            <button type="button" class="sc" data-scenario="late" aria-pressed="false">Task terlambat</button>
+            <button type="button" class="sc" data-scenario="read" aria-pressed="false">Mulai timer baca</button>
+            <button type="button" class="sc" data-scenario="music" aria-pressed="false">Putar musik</button>
+            <button type="button" class="sc" data-scenario="meeting" aria-pressed="false">Rapat dimulai</button>
+            <button type="button" class="sc" data-scenario="fullscreen" aria-pressed="false">Layar penuh</button>
+            <button type="button" class="sc" data-scenario="eye" aria-pressed="false">Istirahat mata</button>
+          </div>
+          <div class="browser">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>contoh-desktop.yomi</span></div>
+            <div class="desk" id="desk">
+              <div class="island island-demo" id="demoIsland" data-state="hero">
+                <button class="island-bar" type="button" aria-expanded="false" aria-controls="demoIsland-panel"
+                        aria-label="Island demo. Klik untuk membuka panel contoh">
+                  <span class="bar-in">
+                    <span class="i-left"><span class="batt"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3 6 13.5h5L10 21l7-10.5h-5z"/></svg><span class="tnum" data-batt>98%</span></span></span>
+                    <span class="i-neko"><img src="assets/neko/neko-idle.png" alt="" width="30" height="23"></span>
+                    <span class="i-label"></span>
+                    <span class="i-right"><span class="tnum" data-clock>09:41</span></span>
+                  </span>
+                </button>
+              </div>
+              <p class="desk-lyric" id="deskLyric" aria-hidden="true"></p>
+              <div class="desk-app" aria-hidden="true"><i></i><i></i><i></i><i class="short"></i></div>
+              <div class="desk-fs" id="deskFs" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="3"/><path d="M10 9.5v3.5l3-1.75z"/></svg><span>Video layar penuh</span></div>
+              <div class="taskbar" aria-hidden="true"><span class="start"></span><span class="tnum" data-clock>09:41</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="sr-only" id="demoStatus" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+
+
+    <!-- 5.6 Unduh -->
+    <section class="section" id="unduh" aria-labelledby="h-unduh" data-island="download">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2 id="h-unduh">Pasang Yomi Island dalam tiga langkah</h2>
+          <p>Gratis untuk pemakaian pribadi.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-n tnum">1</span>
+            <h3>Unduh</h3>
+            <p>Tekan tombol di bawah. Berkas installer <code>Yomi-Island-setup.exe</code> langsung terunduh.</p>
+            <a class="btn btn-primary" href="downloads/Yomi-Island-setup.exe" download="Yomi-Island-setup.exe">Unduh untuk Windows</a>
+          </li>
+          <li class="step step-wide">
+            <span class="step-n tnum">2</span>
+            <h3>Pasang</h3>
+            <p>Jalankan installer-nya. Windows mungkin menampilkan "Windows protected your PC" karena aplikasi ini belum bertanda tangan digital.</p>
+            <div class="warn" role="note">
+              <strong>Catatan SmartScreen</strong>
+              <p>Pilih <b>Informasi lebih lanjut</b>, lalu <b>Tetap jalankan</b>. Peringatan ini wajar untuk aplikasi yang belum bertanda tangan digital, tapi artinya Windows tidak bisa memverifikasi penerbitnya. Unduh hanya dari situs resmi ini.</p>
+            </div>
+          </li>
+          <li class="step">
+            <span class="step-n tnum">3</span>
+            <h3>Selesai</h3>
+            <p>Yomi muncul di tengah atas layar. Klik untuk membuka, seret untuk menggeser. Yomi Island juga terbuka sendiri setiap Windows dinyalakan.</p>
+          </li>
+        </ol>
+        <dl class="reqs">
+          <div><dt>Kebutuhan</dt><dd>Windows 10 atau 11, 64-bit</dd></div>
+          <div><dt>Ukuran installer</dt><dd class="tnum" id="dlSize">9,7 MB</dd></div>
+          <div><dt>Versi</dt><dd class="tnum">0.1.1</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 5.7 FAQ -->
+    <section class="section section-alt" id="faq" aria-labelledby="h-faq" data-island="hero">
+      <div class="wrap faq-grid">
+        <div class="sec-head">
+          <h2 id="h-faq">Pertanyaan yang sering muncul</h2>
+          <p>Jawabannya singkat dan jujur, termasuk soal hal yang belum ada.</p>
+        </div>
+        <div class="faq">
+          <details><summary>Apakah gratis?</summary><p>Ya, untuk pemakaian pribadi non-komersial. Lisensinya source-available, bukan open source: kode boleh dibaca, tapi tidak boleh dijual atau dibagikan ulang tanpa izin. Baca <a href="https://github.com/CrFebrian/Dynamic-Neko/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">LICENSE.txt</a>.</p></details>
+          <details><summary>Kenapa ada peringatan SmartScreen?</summary><p>Installer belum bertanda tangan digital, jadi Windows menampilkan "Windows protected your PC". Pilih Informasi lebih lanjut, lalu Tetap jalankan. Unduh hanya dari situs resmi ini.</p></details>
+          <details><summary>Data apa yang dikirim keluar?</summary><p>Tidak ada akun dan tidak ada telemetri. Aplikasi hanya menghubungi AniList (jadwal anime), MangaDex (bab manga), LRCLIB (lirik, bila dinyalakan), dan GitHub (cek versi, bisa dimatikan). Rinciannya ada di <a href="privasi.html">Kebijakan Privasi</a>.</p></details>
+          <details><summary>Di mana data disimpan?</summary><p>Lokal di laptopmu: task, buku, dan pengaturan. Catatan error ditulis ke <code>error.log</code> di folder data aplikasi, dan tidak dikirim ke mana pun kecuali kamu sendiri melaporkan masalah.</p></details>
+          <details><summary>Bagaimana volume bekerja?</summary><p>Tombol volume mengatur volume utama Windows, bukan volume satu aplikasi saja.</p></details>
+          <details><summary>Musik atau lirik tidak muncul?</summary><p>Pemutarnya harus melaporkan lagu ke Windows. Spotify, pemutar musik, dan browser biasanya bisa. Lirik bergantung pada ketersediaannya di LRCLIB.</p></details>
+          <details><summary>Yomi hilang saat saya menonton?</summary><p>Itu Mode nonton. Kamu bisa mematikannya di Pengaturan, bagian Mode fokus.</p></details>
+          <details><summary>Pengingat tidak berbunyi saat rapat?</summary><p>Itu Mode rapat, yang menahan pengingat dan bunyi saat mikrofon dipakai. Matikan di Pengaturan bila tidak mau.</p></details>
+          <details><summary>Bagaimana cara menerima pembaruan?</summary><p>Pengaturan, Umum, Pembaruan memeriksa GitHub Releases paling sering 12 jam sekali dan memberi tahu lewat yomi. Pemasangannya masih manual. Pembaruan otomatis bertanda tangan ada di rencana.</p></details>
+          <details><summary>Bisa jalan otomatis saat Windows mulai?</summary><p>Ya, dan itu otomatis: setelah terpasang, Yomi Island terbuka sendiri setiap Windows dinyalakan, tanpa pengaturan khusus. Tombol Keluar hanya menutupnya untuk sesi itu. Untuk menghentikannya selamanya, matikan di Pengaturan Windows, Aplikasi, Startup, atau copot pemasangan.</p></details>
+          <details><summary>Bagaimana melaporkan masalah?</summary><p>Buka Pengaturan, lalu "Ada masalah?". Itu membuka folder log dan formulir GitHub yang sudah terisi sebagian. Kamu meninjau isinya sebelum mengirim.</p></details>
+          <details><summary>Bagaimana cara mencopot?</summary><p>Pengaturan Windows, Aplikasi, lalu Yomi Island.</p></details>
+          <details><summary>Bisa dipakai di Mac atau Linux?</summary><p>Belum. Yomi Island hanya untuk Windows 10 dan 11.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5.8 Dukung -->
+    <section class="section support" id="dukung" aria-labelledby="h-dukung" data-island="download">
+      <div class="wrap">
+        <div class="sleeper" aria-hidden="true"><img src="assets/neko/neko-sleep.png" alt="" width="120" height="92" loading="lazy"><span class="zz z1">z</span><span class="zz z2">z</span><span class="zz z3">Z</span></div>
+        <h2 id="h-dukung">Suka dengan Yomi Island?</h2>
+        <p>Aplikasi ini dibuat sendirian, di sela-sela membaca manga dan menyelesaikan task. Kalau neko ini menemanimu dengan baik dan kamu ingin membalasnya, kamu bisa mentraktir lewat Saweria. Tidak ada kewajiban, dan semua fiturnya tetap sama.</p>
+        <a class="btn btn-ghost" href="https://saweria.co/BrianCoding" target="_blank" rel="noopener noreferrer">Dukung lewat Saweria</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-in">
+      <div class="foot-col">
+        <p class="foot-brand">Yomi Island</p>
+        <p class="fine">Hak cipta 2026 CrFebrian. Yomi Island memakai lisensi source-available untuk pemakaian pribadi non-komersial. Baca <a href="https://github.com/CrFebrian/Dynamic-Neko/blob/main/LICENSE.txt" target="_blank" rel="noopener noreferrer">LICENSE.txt</a>. Tanpa akun dan tanpa telemetri, baca <a href="privasi.html">Kebijakan Privasi</a>.</p>
+      </div>
+      <nav class="foot-links" aria-label="Tautan footer">
+        <a href="https://github.com/CrFebrian/Dynamic-Neko/issues" target="_blank" rel="noopener noreferrer">Laporkan masalah</a>
+        <a href="privasi.html">Privasi</a>
+      </nav>
+    </div>
+  </footer>
+
+  <div class="progress" id="progress" aria-hidden="true"><i></i><img src="assets/neko/neko-idle.png" alt="" width="30" height="23"></div>
+
+  <noscript><p class="noscript">Beberapa bagian interaktif butuh JavaScript. Isi halaman tetap bisa dibaca.</p></noscript>
+</body>
+</html>

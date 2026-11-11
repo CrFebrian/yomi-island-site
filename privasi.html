@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kebijakan Privasi Yomi Island</title>
+  <meta name="description" content="Kebijakan privasi Yomi Island: data apa yang diproses di laptopmu dan apa yang dikirim ke layanan lain.">
+  <meta name="theme-color" content="#040407">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&amp;display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#isi">Lewati ke isi</a>
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="brand" href="index.html" aria-label="Yomi Island, ke beranda">
+        <img src="assets/favicon.png" alt="" width="32" height="32">
+        <span>Yomi Island</span>
+      </a>
+      <div class="header-actions">
+        <a class="btn btn-ghost btn-sm" href="index.html">Beranda</a>
+        <a class="btn btn-primary btn-sm" href="downloads/Yomi-Island-setup.exe" download="Yomi-Island-setup.exe">Unduh</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="isi" class="doc-page">
+    <div class="wrap doc">
+      <!-- Bahasa Indonesia -->
+      <article id="id" lang="id">
+        <h1>Kebijakan Privasi Yomi Island</h1>
+        <p class="doc-meta">Berlaku sejak 10 November 2026. <a href="#en" hreflang="en">English version</a></p>
+        <p class="doc-lead">Yomi Island berjalan di laptopmu. Aplikasi ini tidak memiliki akun, iklan, atau telemetri, dan pembuatnya tidak menerima data pribadimu.</p>
+
+        <h2>Yang diproses di laptopmu</h2>
+        <ul class="doc-list">
+          <li><strong>Pemutar media:</strong> judul, artis, sampul album, dan status putar dibaca dari kontrol media Windows untuk ditampilkan di pill dan tab Musik.</li>
+          <li><strong>Suara latar:</strong> lagu lo-fi disertakan di dalam aplikasi dan diputar dari laptopmu, tanpa internet.</li>
+          <li><strong>Jalankan saat Windows mulai:</strong> setelah pemasangan, aplikasi menulis satu entri startup di registri pengguna (<code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code>) agar terbuka sendiri. Kamu bisa mematikannya di Pengaturan Windows, Aplikasi, Startup.</li>
+          <li><strong>Volume utama, baterai, dan layar penuh:</strong> dibaca dari Windows untuk kontrol volume, indikator baterai, dan Mode nonton.</li>
+          <li><strong>Status mikrofon:</strong> dibaca dari pengaturan privasi Windows hanya untuk mengetahui apakah ada aplikasi yang sedang memakai mikrofon, supaya Mode rapat bisa menahan pengingat. Yomi Island tidak merekam suara.</li>
+          <li><strong>Task, buku, statistik baca, daftar anime dan manga, serta pengaturan:</strong> disimpan di database lokal di laptopmu.</li>
+          <li><strong>Catatan error:</strong> ditulis ke berkas <code>error.log</code> di folder data aplikasi dan tidak dikirim otomatis ke mana pun.</li>
+        </ul>
+
+        <h2>Yang dikirim ke layanan lain</h2>
+        <p>Hanya saat fitur terkait dipakai:</p>
+        <ul class="doc-list">
+          <li><strong>AniList (graphql.anilist.co):</strong> judul atau ID anime di daftarmu, untuk mengambil jadwal tayang episode.</li>
+          <li><strong>MangaDex (api.mangadex.org):</strong> judul atau ID manga di daftarmu, untuk mengambil bab terbaru. Dicek tiap 30 menit selama aplikasi berjalan.</li>
+          <li><strong>LRCLIB (lrclib.net):</strong> judul, artis, dan durasi lagu yang diputar, untuk mencari lirik. Hanya bila Lirik berjalan kamu nyalakan.</li>
+          <li><strong>GitHub (api.github.com):</strong> permintaan biasa untuk memeriksa versi baru, paling sering 12 jam sekali, tanpa data pribadi. Bisa dimatikan di Pengaturan lewat "Beri tahu saat ada versi baru".</li>
+        </ul>
+        <p>Layanan-layanan itu bisa melihat alamat IP-mu saat dihubungi, sesuai kebijakan mereka masing-masing.</p>
+
+        <h2>Melaporkan masalah</h2>
+        <p>Di Pengaturan, "Ada masalah?" membuka folder log dan formulir laporan GitHub yang sudah terisi sebagian (versi aplikasi, versi Windows, dan baris terakhir catatan error). Kamu meninjau isinya sebelum mengirim. Halaman GitHub Issues bersifat publik, jadi jangan menulis data pribadi di sana.</p>
+
+        <h2>Situs ini</h2>
+        <p>Situs ini tidak memakai analitik dan tidak memasang cookie. Saat dibuka, browser memuat font Zen Maru Gothic dari Google Fonts, sehingga Google bisa melihat alamat IP-mu. Tombol Unduh mengunduh installer langsung dari situs ini. Animasi pembuka memakai <code>sessionStorage</code> di browsermu hanya untuk mengingat bahwa animasi itu sudah tampil, dan data itu tidak dikirim ke mana pun. Situs ini dihosting di GitHub Pages, yang dapat mencatat kunjungan sesuai kebijakan GitHub.</p>
+
+        <h2>Mengatur dan menghapus data</h2>
+        <p>Matikan Lirik berjalan atau pemberitahuan versi baru kapan saja di Pengaturan. Data lokal ada di folder data aplikasi di laptopmu, dan kamu bisa menghapus folder itu sendiri. Untuk mencopot aplikasi, buka Pengaturan Windows, Aplikasi, lalu Yomi Island.</p>
+
+        <h2>Kontak</h2>
+        <p>Ada pertanyaan? Tulis di <a href="https://github.com/CrFebrian/Dynamic-Neko/issues" target="_blank" rel="noopener noreferrer">halaman Issues Yomi Island</a>. Halaman itu publik, jadi jangan menulis data pribadi di sana.</p>
+      </article>
+
+      <hr class="doc-sep">
+
+      <!-- English -->
+      <article id="en" lang="en">
+        <h1>Yomi Island Privacy Policy</h1>
+        <p class="doc-meta">Effective November 10, 2026. <a href="#id" hreflang="id">Versi Bahasa Indonesia</a></p>
+        <p class="doc-lead">Yomi Island runs on your PC. It has no accounts, ads, or telemetry, and its developer does not receive your personal data.</p>
+
+        <h2>Processed on your PC</h2>
+        <ul class="doc-list">
+          <li><strong>Media player:</strong> title, artist, album cover, and playback state are read from Windows media controls to show in the pill and the Music tab.</li>
+          <li><strong>Background sound:</strong> lo-fi songs are bundled inside the app and play from your PC, with no internet.</li>
+          <li><strong>Run at Windows startup:</strong> after installation, the app writes one startup entry in the user registry (<code>HKCU\Software\Microsoft\Windows\CurrentVersion\Run</code>) so it opens by itself. You can turn it off in Windows Settings, Apps, Startup.</li>
+          <li><strong>Master volume, battery, and full screen:</strong> read from Windows for the volume control, the battery indicator, and Watch mode.</li>
+          <li><strong>Microphone status:</strong> read from Windows privacy settings only to tell whether any app is using the microphone, so Meeting mode can hold reminders. Yomi Island does not record audio.</li>
+          <li><strong>Tasks, books, reading stats, anime and manga lists, and settings:</strong> stored in a local database on your PC.</li>
+          <li><strong>Error log:</strong> written to <code>error.log</code> in the app data folder and never sent automatically.</li>
+        </ul>
+
+        <h2>Sent to other services</h2>
+        <p>Only when the related feature is used:</p>
+        <ul class="doc-list">
+          <li><strong>AniList (graphql.anilist.co):</strong> the title or ID of anime on your list, to get episode air times.</li>
+          <li><strong>MangaDex (api.mangadex.org):</strong> the title or ID of manga on your list, to get the latest chapters. Checked every 30 minutes while the app runs.</li>
+          <li><strong>LRCLIB (lrclib.net):</strong> the title, artist, and length of the song playing, to find lyrics. Only if you turn on Synced lyrics.</li>
+          <li><strong>GitHub (api.github.com):</strong> an ordinary request to check for a new version, at most every 12 hours, with no personal data. You can turn it off in Settings under "Notify me about new versions".</li>
+        </ul>
+        <p>These services can see your IP address when contacted, under their own policies.</p>
+
+        <h2>Reporting a problem</h2>
+        <p>In Settings, "Having a problem?" opens the log folder and a partly filled GitHub report form (app version, Windows version, and the last lines of the error log). You review it before sending. GitHub Issues is public, so do not include personal data there.</p>
+
+        <h2>This website</h2>
+        <p>This website uses no analytics and sets no cookies. When it loads, your browser fetches the Zen Maru Gothic font from Google Fonts, so Google can see your IP address. The Download button fetches the installer directly from this site. The intro animation uses <code>sessionStorage</code> in your browser only to remember that it has played, and that value is never sent anywhere. The site is hosted on GitHub Pages, which may log visits under GitHub's policies.</p>
+
+        <h2>Controlling and deleting data</h2>
+        <p>Turn off Synced lyrics or new-version notices at any time in Settings. Local data lives in the app data folder on your PC, and you can delete that folder yourself. To uninstall, open Windows Settings, Apps, then Yomi Island.</p>
+
+        <h2>Contact</h2>
+        <p>Questions? Write on the <a href="https://github.com/CrFebrian/Dynamic-Neko/issues" target="_blank" rel="noopener noreferrer">Yomi Island Issues page</a>. That page is public, so do not include personal data there.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-in">
+      <div class="foot-col">
+        <p class="foot-brand">Yomi Island</p>
+        <p class="fine">Hak cipta 2026 CrFebrian.</p>
+      </div>
+      <nav class="foot-links" aria-label="Tautan footer">
+        <a href="index.html">Beranda</a>
+        <a href="https://github.com/CrFebrian/Dynamic-Neko/issues" target="_blank" rel="noopener noreferrer">Laporkan masalah</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
